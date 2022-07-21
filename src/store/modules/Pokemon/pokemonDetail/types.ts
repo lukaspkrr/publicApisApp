@@ -12,12 +12,27 @@ export enum PokemonDetailTypes {
  * Data Types
  */
 
+export type Ability = {
+  name: string;
+  isHidden: boolean;
+};
+
 export interface PokemonDetail {
-  id: number | null;
-  idText: string | null;
-  name: string | null;
-  sprite: string | null;
+  id: number;
+  idText: string;
+  name: string;
+  specie: string;
+  sprite: string;
+  height: number;
+  weight: number;
+  genderRate: number;
+  catchRate: number;
+  hatchCounter: number;
+  growthRate: number;
+  description: string;
   types: string[];
+  eggGroups: string[];
+  abilities: Ability[];
 }
 
 /**
@@ -25,7 +40,7 @@ export interface PokemonDetail {
  */
 
 export interface PokemonDetailState {
-  pokemon: any;
+  pokemon: PokemonDetail | null;
   loading: boolean;
   error: boolean;
 }

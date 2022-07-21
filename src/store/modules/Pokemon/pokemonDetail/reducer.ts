@@ -28,7 +28,9 @@ export default function pokemonDetail(state = INITIAL_STATE, action: any) {
       return {
         ...state,
         loading: false,
-        pokemon: action.payload.data,
+        ...(action.payload.data !== 'saved' && {
+          pokemon: action.payload.data,
+        }),
       };
     }
     case PokemonDetailTypes.POKEMON_DETAIL_FAILURE: {

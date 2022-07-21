@@ -6,7 +6,7 @@ export default (reducers: any) => {
     {
       key: 'FreeApi',
       storage: AsyncStorage,
-      whitelist: [],
+      whitelist: ['pokedex', 'pokemonDetail'],
     },
     reducers,
   );

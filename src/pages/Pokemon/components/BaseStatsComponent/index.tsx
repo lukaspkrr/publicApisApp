@@ -1,13 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { DescriptionRowComponent, LabelComponent } from '../';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 const BaseStatsComponent: React.FC = () => {
   return (
-    <View>
-      <Text>BaseStatsComponent</Text>
-    </View>
+    <Container>
+      <DescriptionRowComponent>
+        <LabelComponent>Teste</LabelComponent>
+      </DescriptionRowComponent>
+    </Container>
   );
 };
 

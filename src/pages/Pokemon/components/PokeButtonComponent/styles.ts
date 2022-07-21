@@ -30,7 +30,7 @@ export const ButtonImage = styled.ImageBackground.attrs({
     top: -38,
     left: '45%',
     transform: [{ rotate: '20deg' }],
-    tintColor: rgba(255, 255, 255, 0.4),
+    tintColor: rgba(255, 255, 255, 0.3),
   },
 })`
   flex: 1;

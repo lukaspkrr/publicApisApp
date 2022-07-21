@@ -9,7 +9,7 @@ export function getPokemonDetail(pokemonId: number) {
   };
 }
 
-export function successPokemonDetail(data: PokemonDetail) {
+export function successPokemonDetail(data: PokemonDetail | string) {
   return {
     type: PokemonDetailTypes.POKEMON_DETAIL_SUCCESS,
     payload: {

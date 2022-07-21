@@ -1,7 +1,7 @@
 import styled, { DefaultTheme, ThemeProps } from 'styled-components/native';
 
 import { darken, rgba } from 'polished';
-import pokemonTypes from '~/styles/pokemonTypes';
+import { PokemonTypesTheme } from '~/styles/themes/types';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -23,7 +23,7 @@ export const Card = styled.TouchableOpacity`
 interface CardProps extends ThemeProps<DefaultTheme> {
   type: string;
 }
-export const CardBackGround = styled.ImageBackground.attrs({
+export const CardBackGround = styled.ImageBackground.attrs(({ theme }) => ({
   imageStyle: {
     resizeMode: 'cover',
     height: 120,
@@ -31,15 +31,16 @@ export const CardBackGround = styled.ImageBackground.attrs({
     top: 25,
     left: '45%',
     transform: [{ rotate: '20deg' }],
-    tintColor: rgba(255, 255, 255, 0.4),
+    tintColor: rgba(theme.white, 0.3),
   },
-})<CardProps>`
+}))<CardProps>`
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
   border-radius: 10px;
-  background-color: ${({ type }) => pokemonTypes[type]};
+  background-color: ${({ type, theme }) =>
+    theme[type as keyof PokemonTypesTheme] || 'normal'};
   min-height: 120px;
 `;
 
@@ -53,7 +54,7 @@ export const CardImageColumn = styled.View`
 `;
 
 export const PokemonName = styled.Text`
-  color: #fff;
+  color: ${({ theme }) => theme.white};
   text-transform: capitalize;
   font-size: 16px;
   font-weight: bold;
@@ -63,7 +64,8 @@ interface PokemonIdProps extends ThemeProps<DefaultTheme> {
   type: string;
 }
 export const PokemonId = styled.Text<PokemonIdProps>`
-  color: ${({ type }) => darken(0.2, pokemonTypes[type] || '#fff')};
+  color: ${({ type, theme }) =>
+    darken(0.2, theme[type as keyof PokemonTypesTheme] || theme.white)};
   font-size: 14px;
   font-weight: bold;
   align-self: flex-end;
@@ -72,14 +74,14 @@ export const PokemonId = styled.Text<PokemonIdProps>`
 
 export const TypeContainer = styled.View`
   align-self: flex-start;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: ${({ theme }) => rgba(theme.white, 0.3)};
   padding: 2px 10px;
   border-radius: 10px;
   margin: 2px 0px;
 `;
 
 export const PokemonType = styled.Text`
-  color: #fff;
+  color: ${({ theme }) => theme.white};
   text-transform: capitalize;
   font-weight: bold;
 `;

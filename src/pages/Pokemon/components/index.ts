@@ -3,3 +3,8 @@ export { default as AboutComponent } from './AboutComponent';
 export { default as BaseStatsComponent } from './BaseStatsComponent';
 export { default as EvolutionComponent } from './EvolutionComponent';
 export { default as MovesComponent } from './MovesComponent';
+export { default as LabelComponent } from './LabelComponent';
+export { default as GenderComponent } from './GenderComponent';
+export { default as SectionComponent } from './SectionComponent';
+export { default as DescriptionRowComponent } from './DescriptionRowComponent';
+export { default as TitleComponent } from './TitleComponent';

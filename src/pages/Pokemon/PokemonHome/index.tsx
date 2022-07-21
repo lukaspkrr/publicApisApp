@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { PokeButtonComponent } from '../components';
 
 import {
@@ -16,6 +17,8 @@ interface PokemonHomeProps {
 }
 
 const PokemonHome: React.FC<PokemonHomeProps> = ({ navigation }) => {
+  const { grass, fire, water, electric, poison } = useContext(ThemeContext);
+
   const onPokedex = () => {
     navigation.navigate('Pokedex');
   };
@@ -37,22 +40,22 @@ const PokemonHome: React.FC<PokemonHomeProps> = ({ navigation }) => {
       <ButtonContainer>
         <ButtonContent>
           <PokeButtonComponent
-            color="#4fc1a6"
+            color={grass}
             text="Pokedex"
             onPress={onPokedex}
           />
         </ButtonContent>
         <ButtonContent>
-          <PokeButtonComponent color="#f7776a" text="Moves" />
+          <PokeButtonComponent color={fire} text="Moves" />
         </ButtonContent>
         <ButtonContent>
-          <PokeButtonComponent color="#59a9f4" text="Abilities" />
+          <PokeButtonComponent color={water} text="Abilities" />
         </ButtonContent>
         <ButtonContent>
-          <PokeButtonComponent color="#fdcf49" text="Items" />
+          <PokeButtonComponent color={electric} text="Items" />
         </ButtonContent>
         <ButtonContent>
-          <PokeButtonComponent color="#7c528b" text="Locations" />
+          <PokeButtonComponent color={poison} text="Locations" />
         </ButtonContent>
       </ButtonContainer>
     </Container>

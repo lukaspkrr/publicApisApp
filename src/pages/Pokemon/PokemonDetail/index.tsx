@@ -17,6 +17,7 @@ import {
   PokeballImage,
   RNTabBar,
   ContainerWraper,
+  TypeContent,
 } from './styles';
 
 import Pokeball from '~/assets/images/pokemon/pokeball.png';
@@ -48,21 +49,21 @@ const PokemonDetail: React.FC = () => {
 
   const { pokemon } = pokemonDetailTypedSelector(state => state.pokemonDetail);
 
-  console.tron.log('pokemon', pokemon);
-
   const renderTabBar = (props: any) => <RNTabBar {...props} />;
 
   return (
     <ContainerWraper>
-      <Container type={pokemon.types?.[0]}>
+      <Container type={pokemon?.types?.[0] || ''}>
         <HeaderContainer>
           <Collumn>
-            <PokemonName>{pokemon.name}</PokemonName>
-            {pokemon.types.map((type: string, i: number) => (
-              <TypeContainer>
-                <PokemonType key={String(i)}>{type}</PokemonType>
-              </TypeContainer>
-            ))}
+            <PokemonName>{pokemon?.name}</PokemonName>
+            <TypeContainer>
+              {pokemon?.types?.map((type: string, i: number) => (
+                <TypeContent>
+                  <PokemonType key={String(i)}>{type}</PokemonType>
+                </TypeContent>
+              ))}
+            </TypeContainer>
           </Collumn>
           <Collumn>
             <PokemonId>{pokemon?.idText}</PokemonId>

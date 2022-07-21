@@ -1,8 +1,6 @@
-interface TypesProps {
-  [key: string]: string | null;
-}
+import { PokemonTypesTheme } from './types';
 
-const types: TypesProps = {
+const pokemonTypes: PokemonTypesTheme = {
   normal: '#9099a1',
   fire: '#ff9c54',
   water: '#4d90d5',
@@ -23,4 +21,4 @@ const types: TypesProps = {
   fairy: '#ec8fe6',
 };
 
-export default types;
+export default pokemonTypes;
