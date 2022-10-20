@@ -10,8 +10,9 @@ import { idToText } from '~/utils';
 
 export function* getPokemonList() {
   try {
+    console.tron.log('Entrou');
     const pokemonsList: AxiosResponse = yield call(Api.get, '/pokemon');
-
+    console.tron.log('TESTE', pokemonsList);
     let dataToSave: PokedexList = {
       next: pokemonsList.data.next,
       previous: pokemonsList.data.previous,

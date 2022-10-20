@@ -57,8 +57,8 @@ const Pokedex: React.FC<PokedexProps> = () => {
                 <CardTextColumn>
                   <PokemonName>{item.name || ''}</PokemonName>
                   {item?.types.map((type: string, i: number) => (
-                    <TypeContainer>
-                      <PokemonType key={String(i)}>{type}</PokemonType>
+                    <TypeContainer key={String(i)}>
+                      <PokemonType>{type}</PokemonType>
                     </TypeContainer>
                   ))}
                 </CardTextColumn>

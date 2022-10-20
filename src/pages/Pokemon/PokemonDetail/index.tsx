@@ -59,8 +59,8 @@ const PokemonDetail: React.FC = () => {
             <PokemonName>{pokemon?.name}</PokemonName>
             <TypeContainer>
               {pokemon?.types?.map((type: string, i: number) => (
-                <TypeContent>
-                  <PokemonType key={String(i)}>{type}</PokemonType>
+                <TypeContent key={String(i)}>
+                  <PokemonType>{type}</PokemonType>
                 </TypeContent>
               ))}
             </TypeContainer>

@@ -1,39 +1,40 @@
 // prettier-ignore
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",     /* Recommended React Native TSConfig base */
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  /* Recommended React Native TSConfig base */
   "compilerOptions": {
+    "jsx": "react",
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Completeness */
     "esModuleInterop": true,
-    "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,
+    /* Skip type checking all .d.ts files. */
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     },
     "types": ["jest", "styled-components-react-native"],
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin",
-        "lint": {
-          "validProperties": [
-            "aspect-ratio",
-            "elevation",
-            "margin-vertical",
-            "margin-horizontal",
-            "padding-horizontal",
-            "padding-vertical",
-            "resize-mode",
-            "shadow-color",
-            "shadow-opacity",
-            "shadow-offset",
-            "shadow-radius",
-            "text-align-vertical",
-            "tint-color"
-          ]
-        },
-        "tags": ["styled", "css", "sty"]
-      }
-    ]
+    "plugins": [{
+      "name": "typescript-styled-plugin",
+      "lint": {
+        "validProperties": [
+          "aspect-ratio",
+          "elevation",
+          "margin-vertical",
+          "margin-horizontal",
+          "padding-horizontal",
+          "padding-vertical",
+          "resize-mode",
+          "shadow-color",
+          "shadow-opacity",
+          "shadow-offset",
+          "shadow-radius",
+          "text-align-vertical",
+          "tint-color"
+        ]
+      },
+      "tags": ["styled", "css", "sty"]
+    }]
   }
 }
