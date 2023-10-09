@@ -59,7 +59,7 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
             </AppTouchable>
           </AppContainer>
 
-          {/* Star Wars Icon */}
+          {/* Marvel Icon */}
           <AppContainer>
             <AppTouchable onPress={() => {}}>
               <IconContainer>

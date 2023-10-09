@@ -15,7 +15,7 @@ const DarkmodeComponent: React.FC = () => {
     <Container>
       <DarkmodeButton onPress={toggleTheme}>
         <Icon
-          name={title === 'dark' ? 'ios-moon-sharp' : 'sunny-outline'}
+          name={title === 'dark' ? 'moon-outline' : 'sunny-outline'}
           size={25}
           color={text}
         />

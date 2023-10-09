@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navigation';
 
 import { ThemeContext } from 'styled-components';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Perfil } from '~/pages';
 import HomeStack from './homeStack';
+import { rgba } from 'polished';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -16,7 +17,9 @@ const MyTabs: React.FC = () => {
     <Tab.Navigator
       activeColor={text}
       inactiveColor={highlight}
-      barStyle={{ backgroundColor: secundary }}>
+      barStyle={{ backgroundColor: secundary }}
+      theme={{ colors: { secondaryContainer: rgba(highlight, 0.2) } }}
+      >
       <Tab.Screen
         name="HomeStack"
         component={HomeStack}

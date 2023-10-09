@@ -15,6 +15,7 @@ import {
   ThemeToggleContext,
 } from '~/styles/themes';
 import { navigationRef } from './services/NavigationService';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const App: React.FC = () => {
   const [theme, setTheme] = usePersistState<DefaultTheme>('theme', dark);
@@ -40,9 +41,11 @@ const App: React.FC = () => {
                 theme.title === 'light' ? 'dark-content' : 'light-content'
               }
             />
+            <SafeAreaProvider>
             <NavigationContainer ref={navigationRef}>
               <Routes />
             </NavigationContainer>
+            </SafeAreaProvider>
           </ThemeProvider>
         </ThemeToggleContext.Provider>
       </PersistGate>

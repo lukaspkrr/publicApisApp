@@ -7,6 +7,7 @@ module.exports = {
         rootPathPrefix: '~',
         rootPathSuffix: 'src',
       },
+      'react-native-paper/babel',
     ],
   ],
 };

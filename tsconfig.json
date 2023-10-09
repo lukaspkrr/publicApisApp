@@ -12,7 +12,8 @@
     /* Skip type checking all .d.ts files. */
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "react": [ "./node_modules/@types/react" ]
     },
     "types": ["jest", "styled-components-react-native"],
     "plugins": [{
